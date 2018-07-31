@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+.card {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+
+.state-alivrer {
+  color: rgb(255, 24, 24)
+}
+
+.state-livree {
+  color: rgba(39, 240, 89, 0.733)
+}
+
+.state-encours {
+  color: rgba(47, 24, 255, 0.904)
+}
+

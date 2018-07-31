@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+    <!-- <h5 [appState]="item.state">{{item.state}}</h5> -->
+     <h5 [class]="getStateColor(item.state)">{{item.state}}</h5>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title text-center"></h5>
+      <p class="card-text text-center">
+          {{item.name | capitalize:"item.name"}} <br/>
+          {{item.reference}} <br/>
+          {{item.deliveryDate | date:'medium'}} <br/>
+  </p>
+  <p *ngIf="item.state != state.ENCOURS" class="text-center"><a (click)="changeState(state.ENCOURS)" class="btn btn-primary">{{state.ENCOURS}}</a></p>
+  <p *ngIf="item.state != state.LIVREE" class="text-center"><a (click)="changeState(state.LIVREE)" class="btn btn-primary">{{state.LIVREE}}</a></p>
+</div>
+  </div>

@@ -1,0 +1,5 @@
+<div class="container" >
+  <ng-container *ngFor="let c of collection | filterByStatus: collection">
+ <app-item [item]="c"></app-item>
+  </ng-container>
+  </div>
