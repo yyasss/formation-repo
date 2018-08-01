@@ -1,21 +1,28 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ItemComponent } from './components/item/item/item.component';
-import { NavComponent } from './components/nav/nav.component';
-import { CapitalizePipe } from './pipes/capitalize.pipe';
-import { FilterByStatusPipe } from './pipes/filterByStatus/filter-by-status.pipe';
-import { DeliveredComponent } from './components/delivered/delivered/delivered.component';
-import { StateDirective } from './directives/state.directive';
+import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '../../../node_modules/@angular/forms';
+
+
+import { NavComponent } from './components/nav/nav.component';
+import { ItemComponent } from './components/item/item.component';
+import { FormComponent } from './components/form/form.component';
+
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { FilterByStatePipe } from './pipes/filter-by-state.pipe';
+
+import { StateDirective } from './directives/state.directive';
+
 
 @NgModule({
-  imports: [
-    CommonModule,
+imports: [
+  CommonModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
-  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatusPipe, DeliveredComponent, StateDirective],
-  exports: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatusPipe],
+  declarations: [NavComponent, ItemComponent, CapitalizePipe, FilterByStatePipe, StateDirective, FormComponent],
+  exports: [NavComponent, ItemComponent, FilterByStatePipe, FormComponent]
 })
 export class SharedModule { }

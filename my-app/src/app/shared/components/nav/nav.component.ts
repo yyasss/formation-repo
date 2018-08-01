@@ -6,15 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
-  public isCollapsed = false;
-  public title = 'My super app';
-
+  public title = 'Ma super App';
+  public isCollapsed = true;
   constructor() { }
-
-  closeNav() {
-    this.isCollapsed = true;
-  }
 
   ngOnInit() {
   }

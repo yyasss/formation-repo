@@ -1,23 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">My super APP</a>
-    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
-    [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Acceuil <span class="sr-only" (click)="closeNav()">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/items/list" routerLinkActive="active"  (click)="closeNav()">Collection</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/delivered" routerLinkActive="active"  (click)="closeNav()">Livrées</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand" routerLink="/home" >{{ title }}</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+  [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav" (click)="isCollapsed = !isCollapsed">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Acceuil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/items/list" routerLinkActive="active">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/items/livrees" routerLinkActive="active">Livrées</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="items/add" routerLinkActive="active">Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>

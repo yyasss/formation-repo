@@ -1,23 +1,25 @@
 .card {
   margin-top: 1rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
 }
-
 
 .state-alivrer {
-  color: rgb(255, 24, 24)
+  color: rgb(255, 0, 0);
 }
-
-.state-livree {
-  color: rgba(39, 240, 89, 0.733)
-}
-
 .state-encours {
-  color: rgba(47, 24, 255, 0.904)
+  color: rgb(50, 9, 231);
+}
+.state-livree {
+  color: rgb(40, 143, 14);
 }
 
-body .navbar-light .navbar-nav .nav-link.active  {
-  color: rgba(47, 24, 255, 0.904)
+body .navbar-light .navbar-nav .nav-link.active {
+  color: rgb(255, 0, 0);
 }
+
+.optionTitle {
+  background-color: grey;
+  font-weight: bold;
+}
+
+
 

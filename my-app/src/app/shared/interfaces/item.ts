@@ -1,4 +1,4 @@
-import { State } from '../state.enum';
+import { State } from '../enums/state.enum';
 
 export interface Item {
   id: string;
@@ -6,5 +6,4 @@ export interface Item {
   reference: string;
   deliveryDate: string;
   state: State;
-
 }

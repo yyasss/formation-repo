@@ -1,26 +1,26 @@
-import { State } from '../shared/state.enum';
-import { Item } from '../shared/interface/item';
+import { Item } from '../shared/interfaces/item';
+import { State } from '../shared/enums/state.enum';
 
 export const COLLECTION: Item[] = [
   {
-    id: 'ssdpks',
+    id: 'smldkfj',
     name: 'Yassine',
     reference: '1234',
-    deliveryDate: new Date().toISOString(),
+    deliveryDate: '2018-07-28T22:00:00.000Z',
     state: State.ALIVRER
   },
   {
-    id: 'dghfdh',
+    id: 'qsdlkjfl',
     name: 'Yuzhu',
-    reference: '1234',
-    deliveryDate: new Date().toISOString(),
+    reference: '2435',
+    deliveryDate: '2018-07-29T22:00:00.000Z',
     state: State.ENCOURS
   },
   {
-    id: 'ssdhypks',
+    id: 'lkjlj',
     name: 'Dominique',
-    reference: '1234',
-    deliveryDate: new Date().toISOString(),
+    reference: '3646',
+    deliveryDate: '2018-07-30T22:00:00.000Z',
     state: State.LIVREE
-  }
+  },
 ];

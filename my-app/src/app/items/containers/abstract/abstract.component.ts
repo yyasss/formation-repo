@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../../../shared/interface/item';
+import { Item } from '../../../shared/interfaces/item';
 import { CollectionService } from '../../../core/services/collection.service';
 
 @Component({
@@ -8,12 +8,13 @@ import { CollectionService } from '../../../core/services/collection.service';
   styleUrls: ['./abstract.component.css']
 })
 export class AbstractComponent implements OnInit {
-
-  constructor(protected collectionService: CollectionService) { }
-
   public collection: Item[];
+  constructor(
+    protected collectionService: CollectionService
+  ) { }
 
   ngOnInit() {
     this.collection = this.collectionService.collection;
   }
+
 }
