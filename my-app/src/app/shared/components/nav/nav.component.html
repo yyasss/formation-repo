@@ -6,14 +6,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Acceuil <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Acceuil <span class="sr-only" (click)="closeNav()">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Collection</a>
+          <a class="nav-link" routerLink="/list" routerLinkActive="active"  (click)="closeNav()">Collection</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Livrées</a>
+          <a class="nav-link" routerLink="/delivered" routerLinkActive="active"  (click)="closeNav()">Livrées</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Disabled</a>

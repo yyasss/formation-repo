@@ -12,15 +12,16 @@ import { AbstractComponent } from '../../../../items/containers/abstract/abstrac
 export class DeliveredComponent extends AbstractComponent implements OnInit {
 
  public state = State;
-  @Input() item: Item;
+ public collection: Item[];
 
   constructor(collectionService: CollectionService) {
     super(collectionService);
     super.ngOnInit();
+    this.collection = collectionService.collection.filter(c => c.state === State.LIVREE);
+    console.log(this.collection);
    }
 
 ngOnInit() {
-
 }
 
 

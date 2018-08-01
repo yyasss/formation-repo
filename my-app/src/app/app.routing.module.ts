@@ -1,11 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { DeliveredComponent } from './shared/components/delivered/delivered/delivered.component';
+
+
+const appRoutes = [
+  { path: '',
+    redirectTo: '/list',
+    pathMatch: 'full'
+  },
+  {path: 'delivered', component: DeliveredComponent},
+];
+
 
 @NgModule({
   imports: [
-    CommonModule
+    RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
-  declarations: []
+  exports: [RouterModule]
 })
 
 export class AppRoutingModule { }

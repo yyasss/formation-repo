@@ -10,9 +10,13 @@ import { AbstractComponent } from '../abstract/abstract.component';
 })
 export class ListComponent extends AbstractComponent implements OnInit {
 
+  public collection;
+
   constructor(collectionService: CollectionService) {
     super(collectionService);
     super.ngOnInit();
+    this.collection = this.collectionService;
   }
+
 
 }

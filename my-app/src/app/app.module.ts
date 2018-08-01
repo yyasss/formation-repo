@@ -16,6 +16,7 @@ registerLocaleData(localeFr, 'fr');
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { Router } from '@angular/router';
 
 
 @NgModule({
@@ -27,13 +28,20 @@ import { AppRoutingModule } from './app.routing.module';
     BrowserModule,
     CoreModule,
     SharedModule,
-    PageNotFoundModule,
     LoginModule,
     HomeModule,
     ItemsModule,
-    NgbModule.forRoot()
+    PageNotFoundModule,
+    NgbModule.forRoot()     // pour mettre le pipe Date en francais
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'fr'}],
+  providers: [{provide: LOCALE_ID, useValue: 'fr'}], // pour mettre le pipe Date en francais
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+    // Diagnostic only: inspect router configuration
+    constructor(router: Router) {
+      console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+}
+
+}

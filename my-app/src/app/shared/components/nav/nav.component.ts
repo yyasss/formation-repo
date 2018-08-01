@@ -12,6 +12,10 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
+  closeNav() {
+    this.isCollapsed = true;
+  }
+
   ngOnInit() {
   }
 

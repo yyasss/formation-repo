@@ -17,3 +17,7 @@
   color: rgba(47, 24, 255, 0.904)
 }
 
+body .navbar-light .navbar-nav .nav-link.active  {
+  color: rgba(47, 24, 255, 0.904)
+}
+

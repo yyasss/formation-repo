@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../shared/interface/item';
 import { COLLECTION } from '../collection';
+import { State } from '../../shared/state.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,12 @@ set collection(col: Item[]) {
   /**
    * update collection
    */
+updateCollection(state: State, item: Item) {
+if (this._collection.find(x => x.id === item.id)) {
+  this._collection.find(x => x.id === item.id).state = state;
+}
 
+}
   /**
    * delete collection
    */

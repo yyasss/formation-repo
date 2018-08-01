@@ -1,19 +1,19 @@
 
 <div class="container">
-
+  <ng-container *ngFor="let c of collection | filterByStatus: collection">
 <div class="card">
     <div class="card-header">
-     <h3>{{item.state}}</h3>
+      <h5 [appState]="c.state">{{c.state}}</h5>
     </div>
     <div class="card-body">
       <h5 class="card-title text-center"></h5>
       <p class="card-text text-center">
-          {{item.name | capitalize:"item.name"}} <br/>
-          {{item.reference}} <br/>
-          {{item.deliveryDate | date:'medium'}} <br/>
+          {{c.name | capitalize:"c.name"}}<br/>
+          {{c.reference}} <br/>
+          {{c.deliveryDate | date:'medium'}} <br/>
   </p>
       <p class="text-center"><a href="#" class="btn btn-primary">Aller</a></p>
     </div>
   </div>
-
+</ng-container>
 </div>

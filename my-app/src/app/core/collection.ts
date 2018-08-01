@@ -10,14 +10,14 @@ export const COLLECTION: Item[] = [
     state: State.ALIVRER
   },
   {
-    id: 'ssdpks',
+    id: 'dghfdh',
     name: 'Yuzhu',
     reference: '1234',
     deliveryDate: new Date().toISOString(),
     state: State.ENCOURS
   },
   {
-    id: 'ssdpks',
+    id: 'ssdhypks',
     name: 'Dominique',
     reference: '1234',
     deliveryDate: new Date().toISOString(),

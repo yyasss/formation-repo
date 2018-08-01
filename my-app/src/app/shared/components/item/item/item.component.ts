@@ -23,8 +23,8 @@ export class ItemComponent implements OnInit, OnChanges {
   }
 
 
-  changeState(item: State) {
-     this.item.state = item;
+  changeState(state: State, item: Item) {
+    this.collectionService.updateCollection(state, item);
   }
 
   getStateColor(state: string) {
