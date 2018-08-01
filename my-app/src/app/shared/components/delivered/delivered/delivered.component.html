@@ -12,7 +12,9 @@
           {{c.reference}} <br/>
           {{c.deliveryDate | date:'medium'}} <br/>
   </p>
-      <p class="text-center"><a href="#" class="btn btn-primary">Aller</a></p>
+  <ng-container *ngFor="let s of state">
+    <button class="btn" [ngClass]="{'btn-info': item.state === s, 'btn-secondary': item.state !== s}" (click)="changeState(s, item)">{{ s }}</button>
+  </ng-container>
     </div>
   </div>
 </ng-container>

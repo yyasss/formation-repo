@@ -5,8 +5,6 @@ import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
-import { ItemsModule } from './items/items.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -29,8 +27,6 @@ import { Router } from '@angular/router';
     CoreModule,
     SharedModule,
     LoginModule,
-    HomeModule,
-    ItemsModule,
     PageNotFoundModule,
     NgbModule.forRoot()     // pour mettre le pipe Date en francais
   ],

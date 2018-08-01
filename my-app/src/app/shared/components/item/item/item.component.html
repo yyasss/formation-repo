@@ -10,8 +10,8 @@
           {{item.reference}} <br/>
           {{item.deliveryDate | date:'medium'}} <br/>
   </p>
-      <ng-container *ngFor="let s of state">
-        <button class="btn" [ngClass]="{'btn-info': item.state === s, 'btn-secondary': item.state !== s}" (click)="changeState(s, item)">{{ s }}</button>
-      </ng-container>
+      <button (click)="changeState(state.ENCOURS, item)" *ngIf="state.ALIVRER === item.state" class="btn-sm btn-primary">{{ state.ENCOURS }}</button>
+      <button (click)="changeState(state.LIVREE, item)" *ngIf="state.ENCOURS === item.state" class="btn-sm btn-primary">{{ state.LIVREE }}</button>
+
 </div>
   </div>

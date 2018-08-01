@@ -17,12 +17,8 @@ export class DeliveredComponent extends AbstractComponent implements OnInit {
   constructor(collectionService: CollectionService) {
     super(collectionService);
     super.ngOnInit();
-    this.collection = collectionService.collection.filter(c => c.state === State.LIVREE);
-    console.log(this.collection);
+    this.collection = collectionService.collection.filter(c => c.state !== State.LIVREE);
    }
-
-ngOnInit() {
-}
 
 
 }
