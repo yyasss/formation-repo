@@ -1,7 +1,8 @@
 <form novalidate #form="ngForm" (ngSubmit)="process();"> <!-- enleve les validation de base de bootstrap -->
   <div class="form-group">
-    <input name="name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="nom" [(ngModel)]="item.name" required minlength="5">
+    <input name="name" type="text" #nom="ngModel" class="form-control" aria-describedby="emailHelp" placeholder="nom" [(ngModel)]="item.name" required minlength="5">
   </div>
+  <div class="alert alert-danger" *ngIf="nom.invalid && nom.touched && nom.dirty">Champ invalide</div>
   <div class="form-group">
     <input name="reference" type="text" class="form-control" placeholder="reference"  [(ngModel)]="item.reference" required minlength="5" >
   </div>
