@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Item } from '../../interfaces/item';
 import { State } from '../../enums/state.enum';
+import { DateFormatterService } from '../../../core/services/date-formatter.service';
 
 @Component({
   selector: 'app-form',
@@ -15,7 +16,10 @@ public state = Object.values(State);
 
    @Output() newItem: EventEmitter<Item> = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private dateFormatterService: DateFormatterService
+  ) { }
 
   ngOnInit() {
     this.initForm();
@@ -32,6 +36,7 @@ public state = Object.values(State);
   }
 
   process() {
+    this.item.deliveryDate = this.dateFormatterService.dateToIso(this.item.deliveryDate);
     this.newItem.emit(this.item);
     this.router.navigate(['items/list']);
     this.initForm();

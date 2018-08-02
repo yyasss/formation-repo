@@ -7,10 +7,12 @@ import { State } from '../enums/state.enum';
 export class FilterByStatePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if (args) {
-      return value.filter(item => item.state === State.LIVREE);
+    if (value) {
+      if (args) {
+        return value.filter(item => item.state === State.LIVREE);
+      }
+      return value.filter(item => item.state !== State.LIVREE);
     }
-    return value.filter(item => item.state !== State.LIVREE);
   }
 
 }

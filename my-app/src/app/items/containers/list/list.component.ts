@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { CollectionService } from '../../../core/services/collection.service';
 import { AbstractComponent } from '../abstract/abstract.component';
@@ -8,7 +8,8 @@ import { AbstractComponent } from '../abstract/abstract.component';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent extends AbstractComponent implements OnInit {
+export class ListComponent extends AbstractComponent implements OnInit, OnDestroy {
+
   constructor(
     collectionService: CollectionService
   ) {
@@ -17,6 +18,8 @@ export class ListComponent extends AbstractComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
+
 
 }

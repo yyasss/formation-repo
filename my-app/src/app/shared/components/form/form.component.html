@@ -6,15 +6,28 @@
   <div class="form-group">
     <input name="reference" type="text" class="form-control" placeholder="reference"  [(ngModel)]="item.reference" required minlength="5" >
   </div>
+
+
   <div class="form-group">
-    <input name="deliveryDate" type="date" class="form-control"  [(ngModel)]="item.deliveryDate" required>
+  <div class="input-group" >
+      <input name="deliveryDate" class="form-control"  [(ngModel)]="item.deliveryDate" required ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary"  (click)="d.toggle()" type="button">
+          <img src="assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+        </button>
+      </div>
+    </div>
   </div>
+
+
   <div class="form-group">
-      <select class="custom-select mr-sm-2"  name="state" [(ngModel)]="item.state" required>
+      <select class="custom-select mr-sm-2"  #stateF="ngModel" name="state" [(ngModel)]="item.state" required>
           <option class="optionTitle" value="Status">Status</option>
           <option *ngFor="let s of state" [ngValue]="s">{{s}}</option>
         </select>
   </div>
-  <button [disabled]="form.invalid || item.state === 'Status'" type="submit" class="btn btn-secondary">Soumettre</button>
+  <button [disabled]="form.invalid || stateF.value === 'Status'" type="submit" class="btn btn-secondary">Soumettre</button>
 </form>
+
+
 
