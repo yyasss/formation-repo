@@ -1,0 +1,22 @@
+<form [formGroup]="form" novalidate (ngSubmit)="process();"> <!-- enleve les validation de base de bootstrap -->
+  <div class="form-group">
+    <input name="name" type="text" formControlName="name" class="form-control" aria-describedby="emailHelp" placeholder="nom">
+  </div>
+  <div class="alert alert-danger" *ngIf="isError('name')">Champ invalide</div>
+  <div class="form-group">
+    <input name="reference" formControlName="reference" type="text" class="form-control" placeholder="reference" >
+  </div>
+  <div class="alert alert-danger" *ngIf="isError('reference')">Champ invalide</div>
+  <div class="form-group">
+    <input name="deliveryDate" formControlName="deliveryDate" type="date" class="form-control">
+  </div>
+
+  <div class="form-group">
+      <select class="custom-select mr-sm-2" formControlName="state" >
+          <option class="optionTitle" value="Status">Status</option>
+          <option *ngFor="let s of state" [ngValue]="s">{{s}}</option>
+        </select>
+  </div>
+
+  <button [disabled]="form.invalid || form.value.state === 'Status'" type="submit" class="btn btn-secondary">Soumettre</button>
+</form>
